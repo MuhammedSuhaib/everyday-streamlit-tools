@@ -1,5 +1,5 @@
 def main():
-    print("Hello from data-encryption!")
+    print("Hello from streamlit-apps!")
 
 
 if __name__ == "__main__":
