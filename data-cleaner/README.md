@@ -13,21 +13,6 @@ Data Sweeper is a simple web app built with Streamlit that allows users to uploa
 - Convert files between CSV and Excel formats
 - Download the processed files
 
-## Installation
-1. Clone this repository:
-   ```sh
-   git clone <repository-url>
-   cd <repository-folder>
-   ```
-2. Install dependencies:
-   ```sh
-   pip install -r requirements.txt
-   ```
-3. Run the Streamlit app:
-   ```sh
-   streamlit run app.py
-   ```
-
 ## Usage
 1. Open the app in a browser after running the Streamlit command.
 2. Upload CSV or Excel files using the file uploader.
@@ -41,7 +26,3 @@ Data Sweeper is a simple web app built with Streamlit that allows users to uploa
 - Streamlit
 - Pandas
 - OpenPyXL (for Excel file handling)
-
-## License
-This project is licensed under the MIT License.
-
