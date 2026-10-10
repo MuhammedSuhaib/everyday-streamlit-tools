@@ -1,6 +1,7 @@
 import streamlit as st
 import csv
 from io import StringIO
+
 st.html(
     """<div style="text-align: center; margin-x: 20px; padding: 20px; border: 2px solid #0078D7; border-radius: 15px; background-color: #121212; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
     <h1 style="color: #66c2ff; font-family: 'Arial', sans-serif;">Welcome to My 🔐 Forgot Email Digits Tool</h1>
@@ -22,11 +23,11 @@ chunk_size = 1000
 
 # Only generate when user clicks
 if st.button("Generate & Show Download Options"):
-    limit = 10 ** digits
+    limit = 10**digits
     combinations = [f"{email_prefix}{str(i).zfill(digits)}{email_domain}" for i in range(limit)]
 
     for i in range(0, len(combinations), chunk_size):
-        chunk = combinations[i:i + chunk_size]
+        chunk = combinations[i : i + chunk_size]
         filename = f"emails_{i//chunk_size + 1}.{file_type}"
 
         if file_type == "csv":
@@ -40,10 +41,7 @@ if st.button("Generate & Show Download Options"):
             mime = "text/plain"
 
         st.download_button(
-            label=f"📥 Download {filename}",
-            data=data,
-            file_name=filename,
-            mime=mime
+            label=f"📥 Download {filename}", data=data, file_name=filename, mime=mime
         )
 # Warning Message
 st.html("""
@@ -54,8 +52,7 @@ st.html("""
 
 
 # Footer Section with Links
-st.html(
-    """
+st.html("""
     <div style="text-align: center; margin-top: 30%; padding: 20px; border-top: 2px solid #0078D7; background-color: #121212; color: #66c2ff;">
         <p>Thank you for using my Tool! 🌟</p>
         <p>Created by 𝔐𝔲𝔥𝔞𝔪𝔪𝔞𝔡 ͯś𝔲𝔥𝔞𝔦𝔟</p>

@@ -15,7 +15,9 @@ col0, col1, col2, col3 = st.columns(4)
 # Add content to the first column
 with col0:
     st.header("Input")
-    val = st.number_input('Enter the value to convert',)
+    val = st.number_input(
+        "Enter the value to convert",
+    )
 
 # Add content to the second column
 with col1:
@@ -43,29 +45,26 @@ with col3:
         output = val / 100000
     elif to == "Centimeter" and frm == "Kilometer":
         output = val * 100000
-    elif to == frm :
+    elif to == frm:
         output = val
     else:
         output = None
 
     # Display the conversion output
     if output is not None:
-        st.html("Conversion Output:"f"""
+        st.html("Conversion Output:" f"""
             <div style="background-color: rgb(38, 39, 48); height: 43px; width: 150px;  display: flex; align-items: center; justify-content: center; border-radius: 10px;">{output} {to}</div>
         """)
     else:
         st.write("Invalid conversion")
 with col3:
-    st.html(
-    """
+    st.html("""
     <button style="background-color: #00d3ff36; height: 43px; width: 150px;  display: flex; align-items: center; justify-content: center; border-radius: 10px;">Convert</button>
     """)
 # Footer Section with Links
-st.html(
-    """
+st.html("""
     <div style="text-align: center; margin-top: 30%; padding: 20px; border-top: 2px solid #0078D7; background-color: #121212; color: #66c2ff;">
         <p>Thank you for using the Unit Converter! 🌟</p>
         <p>Created by 𝔐𝔲𝔥𝔞𝔪𝔪𝔞𝔡 ͯś𝔲𝔥𝔞𝔦𝔟</p>
     </div>
-    """
-)
+    """)

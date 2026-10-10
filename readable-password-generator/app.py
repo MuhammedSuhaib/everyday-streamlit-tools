@@ -1,6 +1,5 @@
 import streamlit as st
 import random, string
-st.set_page_config(page_title="Password Generator", layout="centered")
 
 # Header
 st.html(
@@ -9,12 +8,12 @@ st.html(
 </div>"""
 )
 
-st.write('Users should input a longer and more descriptive base text for their password, which will result in a more readable and memorable password.')
-st.write('Example:')
+st.write("Users should input a longer and more descriptive base text for their password, which will result in a more readable and memorable password.")
+st.write("Example:")
 st.markdown("""
 <span>streamlit </span><code style="background-color:#f0f0f0;">uI_&7r3@m1!t</code><span> less readable ❌</span>
 """, unsafe_allow_html=True)
-st.markdown('<span>Streamlit experts. </span><code>_$7re@m1!t-exp3rt&.</code><span> more readable ✅</span>', unsafe_allow_html=True)
+st.markdown("<span>Streamlit experts. </span><code>_$7re@m1!t-exp3rt&.</code><span> more readable ✅</span>", unsafe_allow_html=True)
 
 # UI Inputs
 col1, col2 = st.columns(2)
@@ -33,14 +32,23 @@ if st.button("Generate Password"):
 
         valency = max(0, given_length - length_now)
         random_prefixes = random.choices(string.ascii_letters, k=valency)
-        input_text = ''.join(random_prefixes) + "_" + input_text
+        input_text = "".join(random_prefixes) + "_" + input_text
 
-        input_text = '3'.join(input_text.rsplit('e', 1))
-        input_text = '!'.join(input_text.rsplit('i'))
+        input_text = "3".join(input_text.rsplit("e", 1))
+        input_text = "!".join(input_text.rsplit("i"))
 
-        my_str = input_text.replace('a', '@', 1).replace('l', '1', 1).replace('o', '0', 1).replace('s', '&', 1)\
-            .replace('t', '7', 1).replace('g', '9', 1).replace('S', '$', 1).replace('h', '#', 1)\
-            .replace(" ", "-", random_number).replace(" ", "_")
+        my_str = (
+            input_text.replace("a", "@", 1)
+            .replace("l", "1", 1)
+            .replace("o", "0", 1)
+            .replace("s", "&", 1)
+            .replace("t", "7", 1)
+            .replace("g", "9", 1)
+            .replace("S", "$", 1)
+            .replace("h", "#", 1)
+            .replace(" ", "-", random_number)
+            .replace(" ", "_")
+        )
 
         st.success("Your password:")
         st.code(my_str)

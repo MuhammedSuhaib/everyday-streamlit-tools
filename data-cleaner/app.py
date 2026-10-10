@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 from io import BytesIO
 
-# Configure page layout
-st.set_page_config(page_title="Data Sweeper", layout="wide")
-
 # App title and description
 st.title("Data Sweeper")
 st.write("Upload CSV or Excel files, clean, transform, edit, and download.")
@@ -16,20 +13,33 @@ if uploaded_files:
     for file in uploaded_files:
         # Determine file type
         ext = file.name.split(".")[-1].lower()
-        df = pd.read_csv(file) if ext == "csv" else pd.read_excel(file)
+        try:
+            if ext == "csv":
+                try:
+                    # Attempt automatic delimiter detection
+                    df = pd.read_csv(file, sep=None, engine="python", on_bad_lines="skip")
+                except Exception:
+                    file.seek(0)
+                    df = pd.read_csv(file, on_bad_lines="skip")
+            else:
+                df = pd.read_excel(file)
+        except Exception as err:
+            st.error(f"❌ Failed to parse **{file.name}**: {err}")
+            continue
         
         # Show file info and preview with editable dataframe
         st.write(f"**📄 {file.name}** ({file.size / 1024:.2f} KB)")
-        df = st.data_editor(df, num_rows="dynamic")  # Allow users to edit the dataframe
+        df = st.data_editor(df, num_rows="dynamic", key=f"editor_{file.name}")  # Allow users to edit the dataframe
         
         # Data cleaning options
-        if st.checkbox(f"Clean Data ({file.name})"):
-            if st.button(f"Remove Duplicates ({file.name})"):
-                df.drop_duplicates(inplace=True)
+        if st.checkbox(f"Clean Data ({file.name})", key=f"clean_{file.name}"):
+            if st.button(f"Remove Duplicates ({file.name})", key=f"dup_{file.name}"):
+                df = df.drop_duplicates()
                 st.write("✅ Duplicates removed!")
-            if st.button(f"Fill Missing Values ({file.name})"):
-                df.fillna(df.mean(), inplace=True)
-                st.write("✅ Missing values filled!")
+            if st.button(f"Fill Missing Values ({file.name})", key=f"fill_{file.name}"):
+                num_cols = df.select_dtypes(include="number").columns
+                df[num_cols] = df[num_cols].fillna(df[num_cols].mean())
+                st.write("✅ Missing numeric values filled!")
         
         # Column selection
         cols = st.multiselect(f"Select Columns ({file.name})", df.columns, default=df.columns)
@@ -51,6 +61,6 @@ if uploaded_files:
                 mime, ext = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "xlsx"
             buffer.seek(0)
             st.download_button(f"⬇ Download {file.name} as {fmt}", data=buffer, file_name=f"{file.name}.{ext}", mime=mime)
-
-# Success message
-st.success("🎉 Processing complete!")
+            
+            # Success message
+            st.success(f"🎉 Processing complete for {file.name}!")
