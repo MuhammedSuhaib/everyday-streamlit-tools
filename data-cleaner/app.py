@@ -1,9 +1,10 @@
 import streamlit as st
 import pandas as pd
 from io import BytesIO
+from components import render_header, render_footer
 
 # App title and description
-st.title("Data Sweeper")
+render_header("Data Sweeper")
 st.write("Upload CSV or Excel files, clean, transform, edit, and download.")
 
 # File uploader
@@ -64,3 +65,6 @@ if uploaded_files:
             
             # Success message
             st.success(f"🎉 Processing complete for {file.name}!")
+
+# Footer Section with Links
+render_footer("Data Sweeper")

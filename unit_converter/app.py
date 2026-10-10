@@ -1,13 +1,9 @@
 import streamlit as st
+from components import render_header, render_footer
 
 # Alt + Shift + F to format the code
-st.html(
-    """<div style="text-align: center; margin-x: 20px; padding: 20px; border: 2px solid #0078D7; border-radius: 15px; background-color: #121212; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
-    <h1 style="color: #66c2ff; font-family: 'Arial', sans-serif;">Welcome to My Unit Converter</h1>
-</div>
-"""
-)
-st.title("-<<Choose your units to convert>>-")
+render_header("Unit Converter")
+st.title("Choose your units to convert")
 
 # Create four columns
 col0, col1, col2, col3 = st.columns(4)
@@ -62,9 +58,4 @@ with col3:
     <button style="background-color: #00d3ff36; height: 43px; width: 150px;  display: flex; align-items: center; justify-content: center; border-radius: 10px;">Convert</button>
     """)
 # Footer Section with Links
-st.html("""
-    <div style="text-align: center; margin-top: 30%; padding: 20px; border-top: 2px solid #0078D7; background-color: #121212; color: #66c2ff;">
-        <p>Thank you for using the Unit Converter! 🌟</p>
-        <p>Created by 𝔐𝔲𝔥𝔞𝔪𝔪𝔞𝔡 ͯś𝔲𝔥𝔞𝔦𝔟</p>
-    </div>
-    """)
+render_footer("Unit Converter")

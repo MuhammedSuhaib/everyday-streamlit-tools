@@ -1,13 +1,9 @@
 import streamlit as st
 import csv
 from io import StringIO
+from components import render_header, render_footer
 
-st.html(
-    """<div style="text-align: center; margin-x: 20px; padding: 20px; border: 2px solid #0078D7; border-radius: 15px; background-color: #121212; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
-    <h1 style="color: #66c2ff; font-family: 'Arial', sans-serif;">Welcome to My 🔐 Forgot Email Digits Tool</h1>
-</div>
-"""
-)
+render_header("Forgot Email Digits Tool")
 st.write("""Forgot the last digits of your email?
 Just enter the part you remember — this tool will generate all possible email combinations with the digits you forgot, so you can try logging in again.""")
 st.html("""
@@ -50,11 +46,5 @@ st.html("""
     </div>
 """)
 
-
 # Footer Section with Links
-st.html("""
-    <div style="text-align: center; margin-top: 30%; padding: 20px; border-top: 2px solid #0078D7; background-color: #121212; color: #66c2ff;">
-        <p>Thank you for using my Tool! 🌟</p>
-        <p>Created by 𝔐𝔲𝔥𝔞𝔪𝔪𝔞𝔡 ͯś𝔲𝔥𝔞𝔦𝔟</p>
-    </div>
-    """)
+render_footer("Email Digits Tool")

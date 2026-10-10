@@ -1,12 +1,9 @@
 import streamlit as st
 import random, string
+from components import render_header, render_footer
 
 # Header
-st.html(
-    """<div style="text-align: center; margin-x: 20px; padding: 20px; border: 2px solid #0078D7; border-radius: 15px; background-color: #121212; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);">
-    <h1 style="color: #66c2ff; font-family: 'Arial', sans-serif;">Readable Password Generator</h1>
-</div>"""
-)
+render_header("Readable Password Generator")
 
 st.write("Users should input a longer and more descriptive base text for their password, which will result in a more readable and memorable password.")
 st.write("Example:")
@@ -56,7 +53,7 @@ if st.button("Generate Password"):
         st.warning("Please enter some base text.")
 
 # Pass strength meter
-st.title("-<<Password strength meter>>-")
+st.title("Password strength meter")
 def check_password_strength():
     if input_password := st.text_input("Check password strength", type="password"):
         strength = 0
@@ -77,11 +74,4 @@ def check_password_strength():
 st.button("Check Password Strength", on_click=check_password_strength())
 
 # Footer
-st.html(
-    """
-    <div style="text-align: center; margin-top: 10%; padding: 20px; border-top: 2px solid #0078D7; background-color: #121212; color: #66c2ff;">
-        <p>Thank you for using the Password Generator! 🔐</p>
-        <p>Created by 𝔐𝔲𝔥𝔞𝔪𝔪𝔞𝔡 ͯś𝔲𝔥𝔞𝔦𝔟</p>
-    </div>
-    """
-)
+render_footer("Password Generator")

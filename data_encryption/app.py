@@ -1,6 +1,7 @@
 import streamlit as st
 import hashlib
 from cryptography.fernet import Fernet
+from components import render_header, render_footer
 
 # Initialize session state variables
 if 'stored_data' not in st.session_state:
@@ -37,7 +38,7 @@ def decrypt_data(enc_text, passkey):
 if st.session_state.failed_attempts >= 3:
     st.session_state.page = 'Login'
 
-st.title("🔒 Secure Data Encryption System")
+render_header("Secure Data Encryption System")
 tab1, tab2, tab3 = st.tabs(["Store Data", "Retrieve Data", "Login"])
 
 with tab1:
@@ -100,3 +101,6 @@ else:
     with tab3:
         st.subheader("🔑 You are logged in!")
         st.write("You can now store and retrieve your data securely.")
+
+# Footer Section with Links
+render_footer("Data Encryption System")

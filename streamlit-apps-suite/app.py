@@ -1,7 +1,8 @@
 import streamlit as st
+from components import render_header, render_footer
 
 # Hero Header
-st.title("🚀 Streamlit Apps Suite")
+render_header("Streamlit Apps Suite")
 st.markdown(
     "Welcome to your all-in-one productivity and utility dashboard. "
     "Select an application from the cards below or use the sidebar navigation to get started."
@@ -38,3 +39,6 @@ with col2:
         st.subheader("🔒 Data Encryption")
         st.write("Encrypt and decrypt sensitive text securely using symmetric Fernet encryption with passkeys.")
         st.page_link("data_encryption/app.py", label="Open Data Encryption", icon=":material/lock:")
+
+# Footer Section with Links
+render_footer("Streamlit Apps Suite")
