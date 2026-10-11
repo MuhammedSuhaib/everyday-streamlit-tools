@@ -10,5 +10,4 @@ wheels/
 # Virtual environments
 .venv
 .env
-skills/developing-with-streamlit/SKILL.md
-skills/developing-with-streamlit/scripts/discover.py
+developing-with-streamlit/
