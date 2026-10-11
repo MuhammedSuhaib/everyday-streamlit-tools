@@ -1,6 +1,6 @@
 import streamlit as st
 import random, string
-from components import render_header, render_footer
+from src.components import render_header, render_footer
 
 # Header
 render_header("Readable Password Generator")

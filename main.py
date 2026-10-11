@@ -4,38 +4,38 @@ import streamlit as st
 # Each page points to its corresponding subfolder script
 pages = [
     st.Page(
-        "streamlit-apps-suite/app.py",         # Relative file path to the welcome/landing page
+        "src/app/streamlit-apps-suite/app.py", # Relative file path to the welcome/landing page
         title="Home",                          # Display label in sidebar navigation
         icon=":material/home:",                # Material Symbol icon shown in sidebar
         url_path="home",                       # Unique URL slug (e.g., /home)
         default=True,                          # Default landing page when opening the app
     ),
     st.Page(
-        "unit_converter/app.py",               # Unit Converter mini-app
+        "src/app/unit_converter/app.py",       # Unit Converter mini-app
         title="Unit Converter",
         icon=":material/swap_horiz:",
         url_path="unit-converter",             # Unique URL slug (e.g., /unit-converter)
     ),
     st.Page(
-        "readable-password-generator/app.py",  # Password Generator mini-app
+        "src/app/readable-password-generator/app.py",  # Password Generator mini-app
         title="Password Generator",
         icon=":material/password:",
         url_path="password-generator",         # Unique URL slug (e.g., /password-generator)
     ),
     st.Page(
-        "data-cleaner/app.py",                 # Data Sweeper / Cleaner mini-app
-        title="Data Sweeper",
+        "src/app/data-cleaner/app.py",         # Data Cleaner mini-app
+        title="Data Cleaner",
         icon=":material/cleaning_services:",
-        url_path="data-sweeper",               # Unique URL slug (e.g., /data-sweeper)
+        url_path="data-cleaner",               # Unique URL slug (e.g., /data-cleaner)
     ),
     st.Page(
-        "data_encryption/app.py",              # Data Encryption mini-app
+        "src/app/data_encryption/app.py",      # Data Encryption mini-app
         title="Data Encryption",
         icon=":material/lock:",
         url_path="data-encryption",            # Unique URL slug (e.g., /data-encryption)
     ),
     st.Page(
-        "find-email-combos/app.py",            # Email Combinations mini-app
+        "src/app/find-email-combos/app.py",    # Email Combinations mini-app
         title="Email Combinations",
         icon=":material/mark_email_unread:",
         url_path="email-combinations",          # Unique URL slug (e.g., /email-combinations)

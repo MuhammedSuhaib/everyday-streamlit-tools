@@ -1,7 +1,7 @@
 import streamlit as st
 import csv
 from io import StringIO
-from components import render_header, render_footer
+from src.components import render_header, render_footer
 
 render_header("Forgot Email Digits Tool")
 st.write("""Forgot the last digits of your email?

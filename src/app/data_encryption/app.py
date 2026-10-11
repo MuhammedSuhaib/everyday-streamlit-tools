@@ -1,7 +1,7 @@
 import streamlit as st
 import hashlib
 from cryptography.fernet import Fernet
-from components import render_header, render_footer
+from src.components import render_header, render_footer
 
 # Initialize session state variables
 if 'stored_data' not in st.session_state:
