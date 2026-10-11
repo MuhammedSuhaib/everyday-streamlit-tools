@@ -1,4 +1,6 @@
-# Data Encryption
+# Secure Data Encryption System
+
+A web utility for securely storing and retrieving encrypted data using passkeys. Built with [Streamlit](https://streamlit.io/) and [cryptography](https://cryptography.io/).
 
 ## Everyday Problem
 
@@ -7,6 +9,19 @@ Sharing sensitive information—such as database passwords, API keys, private no
 ## The Solution
 
 A lightweight symmetric cryptographic vault. Encrypt text into ciphertext using Fernet encryption tied to a user-chosen passkey. Only recipients with the matching passkey can decrypt the message. Built-in brute-force protection locks out guessing attempts after 3 consecutive failures.
+
+## Features
+
+- **Encrypt and store data** with a user-defined passkey.
+- **Retrieve and decrypt data** using the correct passkey.
+- **Hashing** is used for passkey verification.
+- **Brute-force protection**: After 3 failed attempts, reauthorization is required.
+
+## How It Works
+
+- Data is encrypted using a symmetric key (Fernet).
+- The passkey is hashed and stored alongside the encrypted data.
+- To retrieve data, the correct passkey must be provided.
 
 ## Usage & Workflow
 

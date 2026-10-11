@@ -1,5 +1,11 @@
 # Phone Number Info
 
+A phone number tracker and validation web utility built with Streamlit.
+
+## Credits
+
+Original concept by **[HunxByts](https://github.com/HunxByts/GhostTrack)**
+
 ## Everyday Problem
 
 Receiving international messages or customer inquiries often leaves you guessing where the caller originated, whether the line is VoIP/toll-free or mobile, and if the dialing format adheres to international standards.
@@ -7,6 +13,15 @@ Receiving international messages or customer inquiries often leaves you guessing
 ## The Solution
 
 A telephone number parsing and validation engine powered by `phonenumbers` metadata. Paste any international phone number with its country code to instantly parse region codes, geographic locations, carrier names, timezones, and normalized E.164 dial formats.
+
+## Features
+
+- Location lookup (country, state/region)
+- Carrier and ISP detection
+- Timezone information
+- Phone number validation and validity checks
+- Format conversion (International, mobile dialing, E.164)
+- Number type classification (Mobile, Fixed-line, VoIP, Toll-free, UAN)
 
 ## Usage & Workflow
 
