@@ -1,17 +1,11 @@
-#!/usr/bin/env python3
-"""Phone number tracker Streamlit app."""
-
-import phonenumbers
-from phonenumbers import carrier, geocoder, timezone
 import streamlit as st
+# Top-level module for parse, validation, formatting, and enums
+import phonenumbers
+# Submodules required for metadata lookup (not automatically imported by phonenumbers)
+from phonenumbers import carrier, geocoder, timezone
+from src.components import render_header, render_footer
 
-st.set_page_config(
-    page_title="GhostTrack",
-    page_icon="📱",
-    layout="centered",
-)
-
-st.title("📱 GhostTrack")
+render_header("Phone Number Info")
 st.markdown("Phone number tracker - Get location, carrier, and timezone information.")
 
 phone_input = st.text_input(
@@ -80,3 +74,4 @@ if st.button("Track", type="primary"):
         except Exception as e:
             st.error(f"Error: {e}")
 
+render_footer("Phone Number Info")

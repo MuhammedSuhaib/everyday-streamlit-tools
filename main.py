@@ -40,6 +40,12 @@ pages = [
         icon=":material/mark_email_unread:",
         url_path="email-combinations",          # Unique URL slug (e.g., /email-combinations)
     ),
+    st.Page(
+        "src/app/phone-number-info/app.py",    # Phone Number Info mini-app
+        title="Phone Number Info",
+        icon=":material/sim_card:",
+        url_path="phone-number-info",          # Unique URL slug (e.g., /phone-number-info)
+    ),
 ]
 
 # Initialize navigation with defined pages

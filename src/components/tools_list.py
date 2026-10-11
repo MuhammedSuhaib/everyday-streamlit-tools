@@ -35,6 +35,13 @@ TOOLS = [
         "external": False,
     },
     {
+        "icon": ":material/sim_card:",
+        "title": "Phone Number Info",
+        "desc": "Track and validate phone numbers with location, telecom carrier, and timezone details.",
+        "path": "src/app/phone-number-info/app.py",
+        "external": False,
+    },
+    {
         "icon": ":material/aod_watch:",
         "title": "Wearable Cheat Notes",
         "desc": "Split text into 130-character chunks for smartband push notifications in real-time.",
