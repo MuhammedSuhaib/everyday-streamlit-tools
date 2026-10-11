@@ -1,28 +1,24 @@
-# Data Sweeper
+# Data Cleaner
 
-## Overview
-Data Sweeper is a simple web app built with Streamlit that allows users to upload, clean, edit, and convert CSV and Excel files with ease.
+## Everyday Problem
 
-## Features
-- Upload CSV and Excel files
-- Preview and edit uploaded files
-- Remove duplicate rows
-- Fill missing numeric values with column means
-- Select specific columns for processing
-- Visualize numerical data with bar charts
-- Convert files between CSV and Excel formats
-- Download the processed files
+Spreadsheets and exported datasets (CSV/Excel) frequently contain corrupt or duplicate records, empty cells, and unwanted columns. Opening heavy desktop spreadsheet tools just to strip duplicates or impute missing values is slow and error-prone.
 
-## Usage
-1. Open the app in a browser after running the Streamlit command.
-2. Upload CSV or Excel files using the file uploader.
-3. Edit the dataset directly in the interactive table.
-4. Apply data cleaning options if needed.
-5. Select columns for further processing.
-6. Visualize data and download the cleaned file in the preferred format.
+## The Solution
 
-## Dependencies
-- Python
-- Streamlit
-- Pandas
-- OpenPyXL (for Excel file handling)
+A zero-install, browser-based data hygiene utility. Upload single or batch CSV/XLSX files, visually inspect records, remove duplicates with a single click, fill numeric blanks with column means, prune irrelevant columns, and convert between formats on export.
+
+## Usage & Workflow
+
+1. **Upload**: Drag and drop one or multiple `.csv` or `.xlsx` files.
+2. **Review & Edit**: Inspect the editable data grid to make quick inline adjustments.
+3. **Cleanse**:
+   - Check **Remove duplicates** to eliminate repeated rows.
+   - Check **Fill missing values** to impute numeric gaps with their calculated mean.
+4. **Filter & Transform**: Select only the columns needed for your final deliverable.
+5. **Visualize**: Generate instant bar charts for numeric distribution checks.
+6. **Download**: Choose CSV or Excel format and download the clean dataset.
+
+## Outcome
+
+Production-ready, standardized datasets cleaned in seconds without manual formulas or data loss.
