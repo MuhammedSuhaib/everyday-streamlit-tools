@@ -52,5 +52,14 @@ st.set_page_config(
     layout="centered",
 )
 
+# External tools in sidebar
+with st.sidebar:
+    st.link_button(
+        "Wearable Cheat Notes",
+        "https://push-notifcation-splitter.streamlit.app/",
+        icon=":material/aod_watch:",
+        use_container_width=True,
+    )
+
 # Render and execute the selected page
 pg.run()

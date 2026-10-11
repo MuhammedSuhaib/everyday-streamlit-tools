@@ -36,8 +36,8 @@ TOOLS = [
     },
     {
         "icon": ":material/aod_watch:",
-        "title": "Push Notification Splitter",
-        "desc": "Split and manage push notifications efficiently.",
+        "title": "Wearable Cheat Notes",
+        "desc": "Split text into 130-character chunks for smartband push notifications in real-time.",
         "path": "https://push-notifcation-splitter.streamlit.app/",
         "external": True,
     },
